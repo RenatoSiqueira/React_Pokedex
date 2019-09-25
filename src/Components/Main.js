@@ -9,7 +9,7 @@ const addId = item => {
     return item
 }
 
-const Main = ({ count, data }) => {
+const Main = ({ count, results }) => {
     return (
         <div className="content pure-u-1 pure-u-md-3-4">
             <div>
@@ -21,10 +21,12 @@ const Main = ({ count, data }) => {
                         </header>
                         <div className="post-description">
                             <div className="post-images pure-g">
-                                {data.results.map(item => {
-                                    const { cod } = addId(item)
-                                    return <Item key={item.name} name={item.name} cod={cod} />
-                                })}
+                                {
+                                    results.map(item => {
+                                        const { cod } = addId(item)
+                                        return <Item key={item.name} name={item.name} cod={cod} />
+                                    })
+                                }
                             </div>
                         </div>
                         <Pagination />
