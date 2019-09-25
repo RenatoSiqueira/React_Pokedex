@@ -1,4 +1,5 @@
 # ReactJS_Pokedex
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a055fe8a-1a3f-4a68-96f7-0cc85e42f397/deploy-status)](https://app.netlify.com/sites/reactjspokedex/deploys)
 
 - [ReactJs_Pokedex](#ReactJs_Pokedex)
     - [Objetivo](#objetivo)
