@@ -1,9 +1,3 @@
-## Available Scripts
-In the project directory, you can run:
-### `npm start`
-### `npm test`
-### `npm run build`
-
 # ReactJS_Pokedex
 
 - [ReactJs_Pokedex](#ReactJs_Pokedex)
@@ -18,11 +12,15 @@ Liste os pokemons, tendo a opção de selecionar um e ver seus dados como foto, 
 
 ### Pré Instruções
 ```
-1. Yarn start ou Npm start
+Yarn start ou Npm start
 ```
 
 ### Instruções
 Este projeto está sujeito à disponibilidade da API [PokeApi](https://pokeapi.co/)
+Para compilar utilize o seguinte comando:
+```
+Yarn build ou Npm build
+```
 
 # Online
 Este projeto está online em: 
