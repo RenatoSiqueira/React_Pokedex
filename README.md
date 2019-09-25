@@ -24,7 +24,7 @@ Yarn build ou Npm build
 
 # Online
 Este projeto está online em: 
-[https://nodejspokedex.herokuapp.com/](https://nodejspokedex.herokuapp.com/)
+[https://reactjspokedex.herokuapp.com/](https://reactjspokedex.herokuapp.com/)
 ```
 Dados Adicionais:
 - Hospedagem: Heroku
