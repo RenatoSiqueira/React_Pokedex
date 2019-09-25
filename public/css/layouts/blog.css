@@ -137,10 +137,10 @@ h3 {
     margin: 1em 0;
 }
 .post-image-meta {
-    margin-top: -3.5em;
-    margin-left: 1em;
-    color: #fff;
-    text-shadow: 0 1px 1px #333;
+    margin-top: -2em;
+    margin-left: 2.3em;
+    color: #333;
+    text-shadow: 0 1px 1px rgb(61, 79, 93);
 }
 
 .footer {
@@ -162,7 +162,7 @@ h3 {
     }
 
     .header {
-        margin: 80% 2em 0;
+        margin: 40% 2em 0;
         text-align: right;
     }
 
@@ -175,4 +175,48 @@ h3 {
     .footer {
         text-align: center;
     }
+}
+.center {
+    text-align: center;
+}
+.layout-item-modules {
+    padding: 0;
+}
+.layout-item-module {
+    margin-right: 0.5714em;
+    font-size: 0.875em;
+}
+.layout-item-module-base a {
+    border-left: 3px solid rgb(14, 144, 210);
+    background-color: rgb(14, 144, 210, 10%);
+    margin-bottom: 0.4em;
+}
+.layout-item-module-grids a {
+    border-left: 3px solid rgb(128, 88, 165);
+    background-color: rgb(128, 88, 165, 10%);
+    margin-bottom: 0.4em;
+}
+.layout-item-module-forms a {
+    border-left: 3px solid rgb(94, 185, 94);
+}
+.layout-item-module-buttons a {
+    border-left: 3px solid rgb(221, 81, 76);
+    background-color: rgb(221, 81, 76, 10%);
+    margin-bottom: 0.4%;
+}
+.layout-item-module-tables a {
+    border-left: 3px solid rgb(94, 185, 94);
+    background-color: rgb(94, 185, 94, 10%);
+    margin-bottom: 0.4%;
+}
+.layout-item-module-menus a {
+    border-left: 3px solid rgb(250, 210, 50);
+}
+.layout-item-module a:link,
+.layout-item-module a:visited {
+    text-transform: capitalize;
+    color: rgb(75, 75, 75);
+    padding: 0 0.5714em;
+    line-height: 1.75;
+    display: block;
 }

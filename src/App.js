@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useReducer } from 'react'
+import React, { useEffect, useReducer } from 'react'
 import Axios from 'axios'
 
 import Loading from './Components/Loading'
 import Sidebar from './Components/Sidebar'
-import Results from './Components/AllResults'
+import Main from './Components/Main'
 
 const url = 'https://pokeapi.co/api/v2/pokemon'
 
@@ -17,32 +17,16 @@ const reducer = (state, action) => {
   return state
 }
 
-const Main = ({ count }) => {
-  return (
-    <div className="content pure-u-1 pure-u-md-3-4">
-      <div>
-        <div className="posts">
-          <h1 className="content-subhead">Listing All {count} Pókemons</h1>
-        </div>
-      </div>
-    </div>
-  )
-}
-
 function App() {
   const [data, dispatch] = useReducer(reducer, {
     loading: true,
-    counter: 0,
     data: {}
   })
   useEffect(() => {
     dispatch({ type: 'REQUEST' })
     Axios
       .get(url)
-      .then(res => {
-        console.log(res)
-        dispatch({ type: 'SUCCESS' })
-      })
+      .then(res => dispatch({ type: 'SUCCESS', data: res.data }))
       .catch(err => dispatch({ type: 'ERROR' }))
   }, [])
 
@@ -50,6 +34,7 @@ function App() {
     <div className="App">
       {data.loading && <Loading />}
       {!data.loading && <Sidebar />}
+      {!data.loading && <Main count={data.data.count} data={data.data} />}
     </div>
   )
 }
