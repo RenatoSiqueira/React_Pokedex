@@ -1,13 +1,13 @@
 import React from 'react'
 
-import Rest from '../Utils/usePokeApi'
+import usePokeApi from '../Utils/usePokeApi'
 
 import Loading from './Loading'
 import LoadingError from './LoadingError'
 import Item from './Item'
 
 const Main = () => {
-    const [{ data, isLoading, isError }] = Rest.usePokeApi('https://pokeapi.co/api/v2/pokemon')
+    const [{ data, isLoading, isError }] = usePokeApi('pokemon')
 
     if (isLoading) {
         return <Loading />

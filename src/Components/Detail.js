@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-import Rest from '../Utils/usePokeApi'
+import usePokeApi from '../Utils/usePokeApi'
 
 import Loading from './Loading'
 import LoadingError from './LoadingError'
@@ -13,7 +13,7 @@ const ListGenerator = ({ url, name }, useClass) => {
 }
 
 const Detail = (props) => {
-    const [{ data, isLoading, isError }] = Rest.usePokeApi(`https://pokeapi.co/api/v2/pokemon/${props.match.params.id}`, 'detail')
+    const [{ data, isLoading, isError }] = usePokeApi(`pokemon/${props.match.params.id}`, 'detail')
 
     if (isLoading) {
         return <Loading />
