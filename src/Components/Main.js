@@ -1,53 +1,18 @@
-import React, { useEffect, useReducer } from 'react'
+import React from 'react'
+
+import Rest from '../Utils/usePokeApi'
 
 import Loading from './Loading'
 import LoadingError from './LoadingError'
 import Item from './Item'
-import Pagination from './Pagination'
 
-const reducer = (state, action) => {
-    if (action.type === 'REQUEST') {
-        return { ...state, loading: true }
-    }
-    if (action.type === 'SUCCESS') {
-        return { ...state, loading: false, data: action.data }
-    }
-    if (action.type === 'ERROR') {
-        return { ...state, loading: false, error: true }
-    }
-    return state
-}
+const Main = () => {
+    const [{ data, isLoading, isError }] = Rest.usePokeApi('https://pokeapi.co/api/v2/pokemon')
 
-
-const addId = item => {
-    const id = item.url.match(/(\d{1,3})\/$/)[1]
-    item.id = id
-    item.cod = id.length === 1 ? '00' + id : id.length === 2 ? '0' + id : id
-    return item
-}
-
-
-const Main = ({ Request }) => {
-    const [data, dispatch] = useReducer(reducer, {
-        loading: true
-    })
-    useEffect(() => {
-        dispatch({ type: 'REQUEST' })
-        const fecthData = async () => {
-            try {
-                const { data } = await Request.get('pokemon')
-                dispatch({ type: 'SUCCESS', data })
-            } catch (err) {
-                dispatch({ type: 'ERROR' })
-            }
-        }
-        fecthData()
-    }, [])
-
-    if (data.loading) {
+    if (isLoading) {
         return <Loading />
     }
-    if (data.error) {
+    if (isError) {
         return <LoadingError />
     }
     return (
@@ -62,14 +27,12 @@ const Main = ({ Request }) => {
                         <div className="post-description">
                             <div className="post-images pure-g">
                                 {
-                                    data.data.results.map(item => {
-                                        const { cod } = addId(item)
-                                        return <Item key={item.name} name={item.name} cod={cod} />
+                                    data.results.map(item => {
+                                        return <Item key={item.name} name={item.name} cod={item.cod} id={item.id} />
                                     })
                                 }
                             </div>
                         </div>
-                        <Pagination />
                     </section>
                 </div>
             </div>
