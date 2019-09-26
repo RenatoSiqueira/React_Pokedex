@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
     return (
@@ -10,7 +11,7 @@ const Sidebar = () => {
                 <nav className="nav">
                     <ul className="nav-list">
                         <li className="nav-item">
-                            <a className="pure-button" href="/">LIST ALL</a>
+                            <Link className="pure-button" to="/">LIST ALL</Link>
                         </li>
                     </ul>
                 </nav>

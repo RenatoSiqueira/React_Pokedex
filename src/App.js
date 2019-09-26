@@ -1,4 +1,5 @@
 import React, { useEffect, useReducer } from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Axios from 'axios'
 
 import Loading from './Components/Loading'
@@ -17,10 +18,33 @@ const reducer = (state, action) => {
   return state
 }
 
+const Home = () => {
+  return (
+    <div className="content pure-u-1 pure-u-md-3-4">
+      <div>
+        <div className="posts">
+          <h1 className="content-subhead">Home</h1>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const HomeD = () => {
+  return (
+    <div className="content pure-u-1 pure-u-md-3-4">
+      <div>
+        <div className="posts">
+          <h1 className="content-subhead">Detail</h1>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function App() {
   const [data, dispatch] = useReducer(reducer, {
-    loading: true,
-    data: {}
+    loading: true
   })
   useEffect(() => {
     dispatch({ type: 'REQUEST' })
@@ -31,11 +55,21 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-      {data.loading && <Loading />}
-      {!data.loading && <Sidebar />}
-      {!data.loading && <Main count={data.data.count} data={data.data} />}
-    </div>
+    <Router>
+      <div className="App">
+        {data.loading && <Loading />}
+        {!data.loading && <Sidebar />}
+        {
+          !data.loading &&
+          <Route exact path='/' render={() => <Main count={data.data.count} results={data.data.results} />} />
+        }
+        <Route path='/detail' component={HomeD} />
+
+        { //!data.loading && 
+          //<Main count={data.data.count} data={data.data} />
+        }
+      </div>
+    </Router>
   )
 }
 
