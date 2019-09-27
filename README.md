@@ -25,17 +25,14 @@ Yarn build ou Npm build
 
 # Online
 Este projeto está online em: 
-[https://reactjspokedex.herokuapp.com/](https://reactjspokedex.herokuapp.com/)
+[https://reactjspokedex.netlify.com](https://reactjspokedex.netlify.com)
 ```
 Dados Adicionais:
-- Hospedagem: Heroku
+- Hospedagem: Netlify
 - Continuous Integration / Deployment on Github Configurado
 ```
 
 # Lista de Funcionalidades
 > - Listar pokemons
 > - Detalhes do pokemon selecionado (foto, tipo(s), habilidades e movimentos)
-> - Paginação
-> - Proxima Pagina / Pagina Anterior
-> - Pipelines de CI/CD (Codeship)
-> - Deploy em ambiente real (Heroku)
+> - Continuous Deployment no Netlify
