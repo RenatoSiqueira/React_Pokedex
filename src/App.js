@@ -13,7 +13,7 @@ function App() {
         <Sidebar />
         <Switch>
           <Route exact path='/' component={Main} />
-          <Route exact path='/detail/:id' render={(props) => <Detail {...props} />} />
+          <Route path='/detail/:id' render={(props) => <Detail {...props} />} />
           <Route component={Error404} />
         </Switch>
       </div>
