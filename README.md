@@ -35,4 +35,5 @@ Dados Adicionais:
 # Lista de Funcionalidades
 > - Listar pokemons
 > - Detalhes do pokemon selecionado (foto, tipo(s), habilidades e movimentos)
+> - Error 404
 > - Continuous Deployment no Netlify
