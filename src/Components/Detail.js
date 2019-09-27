@@ -35,7 +35,7 @@ const Detail = (props) => {
                             <div className="post-images pure-g">
 
                                 <div className="pure-u-1 center">
-                                    <img alt={data.name} className="pure-img-responsive"
+                                    <img alt={data.name} title={data.name} className="pure-img-responsive"
                                         src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${data.cod}.png`}
                                         width="30%" height="30%" />
 
@@ -53,6 +53,7 @@ const Detail = (props) => {
                                                         <img
                                                             key={item}
                                                             alt="sprites of pokemon"
+                                                            title="sprites of pokemon"
                                                             className="pure-img-responsive"
                                                             src={data.sprites[item]}
                                                             width="10%"

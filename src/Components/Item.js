@@ -6,7 +6,7 @@ const Item = ({ name, cod, id }) => {
     return (
         <div className="pure-u-1 pure-u-md-1-2 center">
             <Link to={`/detail/${id}`}>
-                <img alt={name} className="pure-img-responsive"
+                <img alt={name} title={name} className="pure-img-responsive"
                     src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${cod}.png`}
                     width="50%" height="50%" />
             </Link>
