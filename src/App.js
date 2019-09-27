@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Sidebar from './Components/Sidebar'
 import Main from './Components/Main'
@@ -11,9 +11,11 @@ function App() {
     <Router>
       <div className="App">
         <Sidebar />
-        <Route exact path='/' render={() => <Main />} />
-        <Route path='/detail/:id' render={(props) => <Detail {...props} />} />
-        <Route path='*' render={() => <Error404 />} />
+        <Switch>
+          <Route exact path='/' component={Main} />
+          <Route exact path='/detail/:id' render={(props) => <Detail {...props} />} />
+          <Route component={Error404} />
+        </Switch>
       </div>
     </Router>
   )
